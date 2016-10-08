@@ -23,8 +23,9 @@ def load_data(dirname="./cifar-10-batches-py", one_hot=False):
     X_train = []
     Y_train = []
 
-    if dirname != './cifar-10-batches-py':
-        dirname = os.path.join(dirname, 'cifar-10-batches-py')
+    # if dirname != './cifar-10-batches-py':
+    #     dirname = os.path.join(dirname, 'cifar-10-batches-py')
+    dirname = os.path.join(dirname, 'cifar-10-batches-py')
 
     for i in range(1, 6):
         fpath = os.path.join(dirname, 'data_batch_' + str(i))
@@ -76,7 +77,7 @@ def maybe_download(filename, source_url, work_directory):
                                                  filepath, reporthook)
         statinfo = os.stat(filepath)
         print(('Succesfully downloaded', filename, statinfo.st_size, 'bytes.'))
-        untar(filepath)
+    untar(filepath)
     return filepath
 
 #reporthook from stackoverflow #13881092
